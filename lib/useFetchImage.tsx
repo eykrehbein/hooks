@@ -8,14 +8,14 @@ import { useState, useEffect } from "react";
  * @returns hasStartedInitialFetch Whether at least one fetch attempt has been started.
  */
 export const useFetchImage = (src: string) => {
-    const [hasFinished, setHasFinished] = useState(false);
+    const [hasLoaded, setHasLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
     const [hasStartedInitialFetch, setHasStartedInitialFetch] = useState(false);
 
     useEffect(() => {
         if (src) {
             setHasStartedInitialFetch(true);
-            setHasFinished(false);
+            setHasLoaded(false);
             setHasError(false);
 
             const image = new Image();
@@ -26,7 +26,7 @@ export const useFetchImage = (src: string) => {
             };
 
             const handleLoad = () => {
-                setHasFinished(true);
+                setHasLoaded(true);
                 setHasError(false);
             };
 
@@ -40,5 +40,5 @@ export const useFetchImage = (src: string) => {
         }
     }, [src]);
 
-    return { hasFinished, hasError, hasStartedInitialFetch };
+    return { hasLoaded, hasError, hasStartedInitialFetch };
 };

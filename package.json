@@ -1,6 +1,6 @@
 {
     "name": "@eyk/hooks",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Useful hooks",
     "main": "dist/index.js",
     "source": "lib/index.tsx",
@@ -19,7 +19,7 @@
     },
     "homepage": "https://github.com/eykrehbein/hooks#readme",
     "publishConfig": {
-        "directory": "dist"
+        "access": "public"
     },
     "scripts": {
         "build": "microbundle-crl --no-compress --format modern,cjs",
